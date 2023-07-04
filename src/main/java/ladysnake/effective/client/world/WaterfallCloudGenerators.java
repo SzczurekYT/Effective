@@ -11,7 +11,6 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
@@ -19,7 +18,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeKeys;
 
 import java.util.ArrayList;
 import java.util.Arrays;

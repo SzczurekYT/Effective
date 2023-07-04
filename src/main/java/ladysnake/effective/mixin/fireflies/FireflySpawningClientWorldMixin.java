@@ -5,6 +5,7 @@ import ladysnake.effective.client.particle.contracts.FireflyParticleInitialData;
 import ladysnake.effective.client.settings.SpawnSettings;
 import ladysnake.effective.client.settings.data.FireflySpawnSetting;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.Holder;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -27,8 +28,8 @@ import java.util.function.Supplier;
 
 @Mixin(ClientWorld.class)
 public abstract class FireflySpawningClientWorldMixin extends World {
-	protected FireflySpawningClientWorldMixin(MutableWorldProperties properties, RegistryKey<World> registryRef, Holder<DimensionType> dimension, Supplier<Profiler> profiler, boolean isClient, boolean debugWorld, long seed, int maxChainedNeighborUpdates) {
-		super(properties, registryRef, dimension, profiler, isClient, debugWorld, seed, maxChainedNeighborUpdates);
+	protected FireflySpawningClientWorldMixin(MutableWorldProperties worldProperties, RegistryKey<World> registryKey, DynamicRegistryManager registryManager, Holder<DimensionType> dimension, Supplier<Profiler> profiler, boolean client, boolean debug, long seed, int maxChainedNeighborUpdates) {
+		super(worldProperties, registryKey, registryManager, dimension, profiler, client, debug, seed, maxChainedNeighborUpdates);
 	}
 
 	@Inject(method = "randomBlockDisplayTick", slice = @Slice(from = @At(value = "INVOKE", target = "Lnet/minecraft/world/biome/Biome;getParticleConfig()Ljava/util/Optional;")),
