@@ -121,7 +121,7 @@ public class WaterfallCloudGenerators {
 			double offsetX = world.getRandom().nextGaussian() / 5f;
 			double offsetZ = world.getRandom().nextGaussian() / 5f;
 
-			EffectiveUtils.spawnWaterEffect(world, pos.add(.5 + offsetX, world.getRandom().nextFloat(), .5 + offsetZ), world.getRandom().nextFloat() / 5f * Math.signum(offsetX), world.getRandom().nextFloat() / 5f, world.getRandom().nextFloat() / 5f * Math.signum(offsetZ), EffectiveUtils.WaterEffectType.WATERFALL_CLOUD);
+			EffectiveUtils.spawnWaterEffect(world, pos.add(MathHelper.floor(.5 + offsetX), MathHelper.floor(world.getRandom().nextFloat()), MathHelper.floor(.5 + offsetZ)), world.getRandom().nextFloat() / 5f * Math.signum(offsetX), world.getRandom().nextFloat() / 5f, world.getRandom().nextFloat() / 5f * Math.signum(offsetZ), EffectiveUtils.WaterEffectType.WATERFALL_CLOUD);
 		}
 	}
 
